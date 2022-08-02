@@ -5,8 +5,52 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Knowlege Database</title>
 </head>
+
+<header>
+  <h1>knowlegeDB</h1>
+  <p>learn, code and save</p>
+</header>
+
+<section>
+  <form action="">
+
+    <div>
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" minlength="8" maxlength="64" required>
+    </div>
+
+    <div>
+      <label for="linguagem">Linguagem/Skill</label>
+      <input type="text" id="linguagem" minlength="8" maxlength="16" required>
+    </div>
+
+    <div>
+      <label for="categoria">Categoria</label>
+      <input type="text" name="dropdown" list="categorias">
+      <datalist id="categorias">
+        <option value="FrontEnd"></option>
+        <option value="BackEnd"></option>
+        <option value="FullStack"></option>
+        <option value="SoftSkills"></option>
+      </datalist>
+    </div>
+
+    <div>
+      <label for="linguagem">Descrição</label>
+      <textarea name="descricao" id="descricao" cols="30" rows="10" minlength="32" maxlength="512" required></textarea>
+    </div>
+
+    <div>
+      <label for="video">Vídeo do YouTube</label>
+      <input type="text" id="video" required>
+    </div>
+
+    <button type="submit">Salvar</button>
+    <button type="reset">Limpar</button>
+  </form>
+</section>
 
 <body>
 

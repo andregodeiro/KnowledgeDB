@@ -52,6 +52,10 @@ form button {
   border-radius: 10px;
 }
 
+#descricao {
+  resize: none;
+}
+
 .botao {
   display: flex;
   flex-direction: row;

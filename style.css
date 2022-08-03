@@ -7,11 +7,15 @@
 }
 
 /* Paleta de Cores */
-/* .color1 { #063940 };
+/* 
+.color1 { #063940 };
 .color2 { #195e63 };
 .color3 { #3e838c };
 .color4 { #8ebdb6 };
-.color5 { #ece1c3 }; */
+.color5 { #ece1c3 }; 
+*/
+
+/* Cabeçalho e logo */
 
 .header {
   background: #063940;
@@ -23,6 +27,8 @@
 .logo {
   width: 300px;
 }
+
+/* Formulário */
 
 .formulario {
   background: #ece1c3;
@@ -37,7 +43,6 @@ form div {
   /* width: 50%; */
   margin: 10px;
   border-radius: 10px;
-  grid-area: 1 / 1 / 3 / 2;
 }
 
 form button {
@@ -63,12 +68,16 @@ form button {
   color: white;
 }
 
-.main {
+/* Corpo da Página (formulário, estatísticas e cards) */
+
+.containerPrincipal {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: repeat(2, 1fr);
   margin: 10px;
 }
+
+/* Estatísticas e Busca */
 
 .stats {
   display: flex;
@@ -78,7 +87,6 @@ form button {
   margin: 10px;
   border-radius: 10px;
   align-items: center;
-  grid-area: 1 / 2 / 2 / 3;
 }
 
 .stotal,
@@ -101,12 +109,17 @@ form button {
   gap: 10px;
 }
 
-.botaoPesquisar {
-  width: 9%;
+.botaoPesquisar,
+.botaoLimpar {
+  width: 15px;
+  margin-right: 15px;
 }
 
+/* Cards */
+
 .containerCards {
-  grid-area: 2 / 2 / 3 / 3;
+  height: 76%;
+  overflow-y: scroll;
 }
 
 .containerCards h2 {
@@ -120,7 +133,7 @@ form button {
   padding: 15px;
   margin: 10px;
   border-radius: 10px;
-  gap: 10px;
+  gap: 15px;
   text-align: justify;
 }
 
@@ -132,4 +145,14 @@ form button {
 
 .cardDescricao {
   gap: 10px;
+}
+
+.cardBotoes {
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+}
+
+.cardBotoes img {
+  width: 30px;
 }

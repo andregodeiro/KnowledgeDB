@@ -5,115 +5,161 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./source/img/icons/favicon.png" type="image/png">
   <link rel="stylesheet" href="/style.css">
   <title>Knowlege Database</title>
 
 </head>
 
-<header>
-  <div class="header">
-    <div>
-      <img class="logo" src="./source/img/knowledgeDB.png" alt="logo Database">
-    </div>
-  </div>
-  </div>
-</header>
-
-<div class="main">
-  <section>
-    <form action="">
-
-      <div class="formulario">
-
-        <div class="titulo">
-          <label for="titulo">Título:</label>
-          <input type="text" id="titulo" minlength="8" maxlength="64" required>
-        </div>
-
-        <div class="skill">
-          <label for="linguagem">Linguagem/Skill:</label>
-          <input type="text" id="linguagem" minlength="8" maxlength="16" required>
-        </div>
-
-        <div class="categoria">
-          <label for="categoria">Categoria:</label>
-          <input type="text" name="dropdown" list="categorias">
-          <datalist id="categorias">
-            <option value="FrontEnd"></option>
-            <option value="BackEnd"></option>
-            <option value="FullStack"></option>
-            <option value="SoftSkill"></option>
-          </datalist>
-        </div>
-
-        <div class="descricao">
-          <label for="linguagem">Descrição:</label>
-          <textarea name="descricao" id="descricao" cols="30" rows="10" minlength="32" maxlength="512" required></textarea>
-        </div>
-
-        <div class="video">
-          <label for="video">Vídeo do YouTube:</label>
-          <input type="text" id="video" required>
-        </div>
-
-        <div class="botao">
-          <button type="reset" class="limpar">Limpar</button>
-          <button type="submit" class="salvar">Salvar</button>
-        </div>
-      </div>
-    </form>
-  </section>
-
-  <main>
-    <div class="stats">
-      <div class="stotal">
-        <div>Total</div>
-        <div>00</div>
-      </div>
-      <div class=" sfront">
-        <div>FrontEnd</div>
-        <div>00</div>
-      </div>
-      <div class="sback">
-        <div>BackEnd</div>
-        <div>00</div>
-      </div>
-      <div class="sfull">
-        <div>FullStack</div>
-        <div>00</div>
-      </div>
-      <div class="sfull">
-        <div>SoftSkill</div>
-        <div>00</div>
-      </div>
-      <div class="busca">
-        <input type="text" id="txtBusca" placeholder="Buscar...">
-        <a href=""><img src="./source/img/pesquisa.png" alt="" class="botaoPesquisar"></a>
-      </div>
-  </main>
-
-  <div class="containerCards">
-
-    <div class="card">
-      <h2>Título</h2>
-      <div class="cardSkill">
-        <p> <strong> Linguagem/Skill:</strong></p>
-        <span>Descrição</span>
-      </div>
-      <div class="cardCategoria">
-        <p> <strong>Categoria:</strong></p>
-        <span>FrontEnd</span>
-      </div>
-      <div class="cardDescricao">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui nostrum a quia minima, laborum omnis officiis, rerum enim sint nulla sit! Harum dignissimos ipsa voluptates natus aperiam adipisci rerum ad nisi, atque reprehenderit tempora quia minus, ab est eius commodi perspiciatis fugit error incidunt. Sunt distinctio minus dolores amet voluptate excepturi accusantium. Excepturi tempore quae facilis veritatis aliquam eaque nobis! Doloribus, atque? Architecto voluptatem eum natus esse accusamus eligendi laborum repellendus commodi quae, dolores quo neque adipisci recusandae odit amet sequi corrupti ducimus vitae quos. Nihil totam ex laudantium aliquid deserunt modi rerum? Ad sunt, consectetur harum alias omnis impedit obcaecati unde. Qui ea natus velit! Rem soluta alias modi animi doloribus eum porro hic quibusdam ipsam a dignissimos vitae, obcaecati, consequuntur assumenda ea, praesentium blanditiis deserunt culpa dicta! Non, eligendi molestias! Culpa odio nihil molestiae saepe ipsum in dicta porro autem magnam provident, excepturi libero repellendus illum ipsa.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-
 <body>
+  <header>
+    <div class="header">
+      <div>
+        <img class="logo" src="./source/img/knowledgeDB.png" alt="logo Database">
+      </div>
+    </div>
+    </div>
+  </header>
 
+  <div class="containerPrincipal">
+
+    <section>
+      <form action="">
+
+        <div class="formulario">
+
+          <div class="titulo">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" minlength="8" maxlength="64" required>
+          </div>
+
+          <div class="skill">
+            <label for="linguagem">Linguagem/Skill:</label>
+            <input type="text" id="linguagem" minlength="8" maxlength="16" required>
+          </div>
+
+          <div class="categoria">
+            <label for="categoria">Categoria:</label>
+            <input type="text" name="dropdown" list="categorias">
+            <datalist id="categorias">
+              <option value="FrontEnd"></option>
+              <option value="BackEnd"></option>
+              <option value="FullStack"></option>
+              <option value="SoftSkill"></option>
+            </datalist>
+          </div>
+
+          <div class="descricao">
+            <label for="linguagem">Descrição:</label>
+            <textarea name="descricao" id="descricao" cols="30" rows="10" minlength="32" maxlength="512" required></textarea>
+          </div>
+
+          <div class="video">
+            <label for="video">Vídeo do YouTube:</label>
+            <input type="text" id="video" required>
+          </div>
+
+          <div class="botao">
+            <button type="reset" class="limpar">Limpar</button>
+            <button type="submit" class="salvar">Salvar</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <div class="main">
+      <div class="stats">
+        <div class="stotal">
+          <div>Total</div>
+          <div>00</div>
+        </div>
+        <div class=" sfront">
+          <div>FrontEnd</div>
+          <div>00</div>
+        </div>
+        <div class="sback">
+          <div>BackEnd</div>
+          <div>00</div>
+        </div>
+        <div class="sfull">
+          <div>FullStack</div>
+          <div>00</div>
+        </div>
+        <div class="sfull">
+          <div>SoftSkill</div>
+          <div>00</div>
+        </div>
+        <div class="busca">
+          <input type="text" id="txtBusca" placeholder="Buscar...">
+          <a href=""><img src="./source/img/icons/pesquisa.png" alt="botão pesquisar" class="botaoPesquisar"></a>
+          <a href=""><img src="./source/img/icons/limpar.png" alt="botão limpar" class="botaoLimpar"></a>
+        </div>
+      </div>
+
+      <div class="containerCards">
+
+        <div class="card">
+          <h2>Título</h2>
+          <div class="cardSkill">
+            <p> <strong> Linguagem/Skill:</strong></p>
+            <span>Descrição</span>
+          </div>
+          <div class="cardCategoria">
+            <p> <strong>Categoria:</strong></p>
+            <span>FrontEnd</span>
+          </div>
+          <div class="cardDescricao">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui nostrum a quia minima, laborum omnis officiis, rerum enim sint nulla sit! Harum dignissimos ipsa voluptates natus aperiam adipisci rerum ad nisi, atque reprehenderit tempora quia minus, ab est eius commodi perspiciatis fugit error incidunt. Sunt distinctio minus dolores amet voluptate excepturi accusantium. Excepturi tempore quae facilis veritatis aliquam eaque nobis! Doloribus, atque? Architecto voluptatem eum natus esse accusamus eligendi laborum repellendus commodi quae, dolores quo neque adipisci recusandae odit amet sequi corrupti ducimus vitae quos. Nihil totam ex laudantium aliquid deserunt modi rerum? Ad sunt, consectetur harum alias omnis impedit obcaecati unde. Qui ea natus velit! Rem soluta alias modi animi doloribus eum porro hic quibusdam ipsam a dignissimos vitae, obcaecati, consequuntur assumenda ea, praesentium blanditiis deserunt culpa dicta! Non, eligendi molestias! Culpa odio nihil molestiae saepe ipsum in dicta porro autem magnam provident, excepturi libero repellendus illum ipsa.</p>
+          </div>
+          <div class="cardBotoes">
+            <a href=""><img src="./source/img/icons/excluir.png" alt=""></a>
+            <a href=""><img src="./source/img/icons/editar.png" alt=""></a>
+            <a href=""><img src="./source/img/icons/video.png" alt=""></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Título</h2>
+          <div class="cardSkill">
+            <p> <strong> Linguagem/Skill:</strong></p>
+            <span>Descrição</span>
+          </div>
+          <div class="cardCategoria">
+            <p> <strong>Categoria:</strong></p>
+            <span>FrontEnd</span>
+          </div>
+          <div class="cardDescricao">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui nostrum a quia minima, laborum omnis officiis, rerum enim sint nulla sit! Harum dignissimos ipsa voluptates natus aperiam adipisci rerum ad nisi, atque reprehenderit tempora quia minus, ab est eius commodi perspiciatis fugit error incidunt. Sunt distinctio minus dolores amet voluptate excepturi accusantium. Excepturi tempore quae facilis veritatis aliquam eaque nobis! Doloribus, atque? Architecto voluptatem eum natus esse accusamus eligendi laborum repellendus commodi quae, dolores quo neque adipisci recusandae odit amet sequi corrupti ducimus vitae quos. Nihil totam ex laudantium aliquid deserunt modi rerum? Ad sunt, consectetur harum alias omnis impedit obcaecati unde. Qui ea natus velit! Rem soluta alias modi animi doloribus eum porro hic quibusdam ipsam a dignissimos vitae, obcaecati, consequuntur assumenda ea, praesentium blanditiis deserunt culpa dicta! Non, eligendi molestias! Culpa odio nihil molestiae saepe ipsum in dicta porro autem magnam provident, excepturi libero repellendus illum ipsa.</p>
+          </div>
+          <div class="cardBotoes">
+            <a href=""><img src="./source/img/icons/excluir.png" alt=""></a>
+            <a href=""><img src="./source/img/icons/editar.png" alt=""></a>
+            <a href=""><img src="./source/img/icons/video.png" alt=""></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Título</h2>
+          <div class="cardSkill">
+            <p> <strong> Linguagem/Skill:</strong></p>
+            <span>Descrição</span>
+          </div>
+          <div class="cardCategoria">
+            <p> <strong>Categoria:</strong></p>
+            <span>FrontEnd</span>
+          </div>
+          <div class="cardDescricao">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui nostrum a quia minima, laborum omnis officiis, rerum enim sint nulla sit! Harum dignissimos ipsa voluptates natus aperiam adipisci rerum ad nisi, atque reprehenderit tempora quia minus, ab est eius commodi perspiciatis fugit error incidunt. Sunt distinctio minus dolores amet voluptate excepturi accusantium. Excepturi tempore quae facilis veritatis aliquam eaque nobis! Doloribus, atque? Architecto voluptatem eum natus esse accusamus eligendi laborum repellendus commodi quae, dolores quo neque adipisci recusandae odit amet sequi corrupti ducimus vitae quos. Nihil totam ex laudantium aliquid deserunt modi rerum? Ad sunt, consectetur harum alias omnis impedit obcaecati unde. Qui ea natus velit! Rem soluta alias modi animi doloribus eum porro hic quibusdam ipsam a dignissimos vitae, obcaecati, consequuntur assumenda ea, praesentium blanditiis deserunt culpa dicta! Non, eligendi molestias! Culpa odio nihil molestiae saepe ipsum in dicta porro autem magnam provident, excepturi libero repellendus illum ipsa.</p>
+          </div>
+          <div class="cardBotoes">
+            <a href=""><img src="./source/img/icons/excluir.png" alt=""></a>
+            <a href=""><img src="./source/img/icons/editar.png" alt=""></a>
+            <a href=""><img src="./source/img/icons/video.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

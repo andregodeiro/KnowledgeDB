@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./source/img/icons/favicon.png" type="image/png">
   <link rel="stylesheet" href="/style.css">
-  <title>Knowlege Database</title>
+  <title>Knowlege DataBase</title>
 
 </head>
 
@@ -24,7 +24,7 @@
   <div class="containerPrincipal">
 
     <section>
-      <form action="">
+      <form id="formulario" action="">
 
         <div class="formulario">
 
@@ -35,17 +35,17 @@
 
           <div class="skill">
             <label for="linguagem">Linguagem/Skill:</label>
-            <input type="text" id="linguagem" minlength="8" maxlength="16" required>
+            <input type="text" id="linguagem" minlength="4" maxlength="16" required>
           </div>
 
           <div class="categoria">
             <label for="categoria">Categoria:</label>
-            <input type="text" name="dropdown" list="categorias">
+            <input type="text" name="dropdown" id="categoria" list="categorias">
             <datalist id="categorias">
-              <option value="FrontEnd"></option>
-              <option value="BackEnd"></option>
-              <option value="FullStack"></option>
-              <option value="SoftSkill"></option>
+              <option value="FrontEnd">FrontEnd</option>
+              <option value="BackEnd">BackEnd</option>
+              <option value="FullStack">FullStack</option>
+              <option value="SoftSkill">SoftSkill</option>
             </datalist>
           </div>
 
@@ -55,13 +55,13 @@
           </div>
 
           <div class="video">
-            <label for="video">Vídeo do YouTube:</label>
-            <input type="text" id="video" required>
+            <label for="video" id="videoYT">Vídeo do YouTube:</label>
+            <input type="text" id="video">
           </div>
 
           <div class="botao">
             <button type="reset" class="limpar">Limpar</button>
-            <button type="submit" class="salvar">Salvar</button>
+            <button id="salvar" type="submit" class="salvar">Salvar</button>
           </div>
         </div>
       </form>
@@ -98,68 +98,20 @@
 
       <div class="containerCards">
 
-        <div class="card">
-          <h2>Título</h2>
-          <div class="cardSkill">
-            <p> <strong> Linguagem/Skill:</strong></p>
-            <span>Descrição</span>
-          </div>
-          <div class="cardCategoria">
-            <p> <strong>Categoria:</strong></p>
-            <span>FrontEnd</span>
-          </div>
-          <div class="cardDescricao">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui nostrum a quia minima, laborum omnis officiis, rerum enim sint nulla sit! Harum dignissimos ipsa voluptates natus aperiam adipisci rerum ad nisi, atque reprehenderit tempora quia minus, ab est eius commodi perspiciatis fugit error incidunt. Sunt distinctio minus dolores amet voluptate excepturi accusantium. Excepturi tempore quae facilis veritatis aliquam eaque nobis! Doloribus, atque? Architecto voluptatem eum natus esse accusamus eligendi laborum repellendus commodi quae, dolores quo neque adipisci recusandae odit amet sequi corrupti ducimus vitae quos. Nihil totam ex laudantium aliquid deserunt modi rerum? Ad sunt, consectetur harum alias omnis impedit obcaecati unde. Qui ea natus velit! Rem soluta alias modi animi doloribus eum porro hic quibusdam ipsam a dignissimos vitae, obcaecati, consequuntur assumenda ea, praesentium blanditiis deserunt culpa dicta! Non, eligendi molestias! Culpa odio nihil molestiae saepe ipsum in dicta porro autem magnam provident, excepturi libero repellendus illum ipsa.</p>
-          </div>
-          <div class="cardBotoes">
-            <a href=""><img src="./source/img/icons/excluir.png" alt=""></a>
-            <a href=""><img src="./source/img/icons/editar.png" alt=""></a>
-            <a href=""><img src="./source/img/icons/video.png" alt=""></a>
-          </div>
-        </div>
+        <ul class="card" id="cards">
 
-        <div class="card">
-          <h2>Título</h2>
-          <div class="cardSkill">
-            <p> <strong> Linguagem/Skill:</strong></p>
-            <span>Descrição</span>
-          </div>
-          <div class="cardCategoria">
-            <p> <strong>Categoria:</strong></p>
-            <span>FrontEnd</span>
-          </div>
-          <div class="cardDescricao">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui nostrum a quia minima, laborum omnis officiis, rerum enim sint nulla sit! Harum dignissimos ipsa voluptates natus aperiam adipisci rerum ad nisi, atque reprehenderit tempora quia minus, ab est eius commodi perspiciatis fugit error incidunt. Sunt distinctio minus dolores amet voluptate excepturi accusantium. Excepturi tempore quae facilis veritatis aliquam eaque nobis! Doloribus, atque? Architecto voluptatem eum natus esse accusamus eligendi laborum repellendus commodi quae, dolores quo neque adipisci recusandae odit amet sequi corrupti ducimus vitae quos. Nihil totam ex laudantium aliquid deserunt modi rerum? Ad sunt, consectetur harum alias omnis impedit obcaecati unde. Qui ea natus velit! Rem soluta alias modi animi doloribus eum porro hic quibusdam ipsam a dignissimos vitae, obcaecati, consequuntur assumenda ea, praesentium blanditiis deserunt culpa dicta! Non, eligendi molestias! Culpa odio nihil molestiae saepe ipsum in dicta porro autem magnam provident, excepturi libero repellendus illum ipsa.</p>
-          </div>
-          <div class="cardBotoes">
-            <a href=""><img src="./source/img/icons/excluir.png" alt=""></a>
-            <a href=""><img src="./source/img/icons/editar.png" alt=""></a>
-            <a href=""><img src="./source/img/icons/video.png" alt=""></a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>Título</h2>
-          <div class="cardSkill">
-            <p> <strong> Linguagem/Skill:</strong></p>
-            <span>Descrição</span>
-          </div>
-          <div class="cardCategoria">
-            <p> <strong>Categoria:</strong></p>
-            <span>FrontEnd</span>
-          </div>
-          <div class="cardDescricao">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui nostrum a quia minima, laborum omnis officiis, rerum enim sint nulla sit! Harum dignissimos ipsa voluptates natus aperiam adipisci rerum ad nisi, atque reprehenderit tempora quia minus, ab est eius commodi perspiciatis fugit error incidunt. Sunt distinctio minus dolores amet voluptate excepturi accusantium. Excepturi tempore quae facilis veritatis aliquam eaque nobis! Doloribus, atque? Architecto voluptatem eum natus esse accusamus eligendi laborum repellendus commodi quae, dolores quo neque adipisci recusandae odit amet sequi corrupti ducimus vitae quos. Nihil totam ex laudantium aliquid deserunt modi rerum? Ad sunt, consectetur harum alias omnis impedit obcaecati unde. Qui ea natus velit! Rem soluta alias modi animi doloribus eum porro hic quibusdam ipsam a dignissimos vitae, obcaecati, consequuntur assumenda ea, praesentium blanditiis deserunt culpa dicta! Non, eligendi molestias! Culpa odio nihil molestiae saepe ipsum in dicta porro autem magnam provident, excepturi libero repellendus illum ipsa.</p>
-          </div>
-          <div class="cardBotoes">
-            <a href=""><img src="./source/img/icons/excluir.png" alt=""></a>
-            <a href=""><img src="./source/img/icons/editar.png" alt=""></a>
-            <a href=""><img src="./source/img/icons/video.png" alt=""></a>
-          </div>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+  <script src="./localstorage.js"></script>
 </body>
 
 </html>

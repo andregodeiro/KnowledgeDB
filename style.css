@@ -132,6 +132,10 @@ form button {
   gap: 10px;
 }
 
+li {
+  list-style-type: none;
+}
+
 .card {
   background: #ece1c3;
   padding: 15px;
@@ -159,4 +163,11 @@ form button {
 
 .cardBotoes img {
   width: 30px;
+}
+
+#excluir,
+#editar,
+#video {
+  background: none;
+  border: none;
 }

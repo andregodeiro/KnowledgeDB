@@ -24,7 +24,9 @@ function salvarCard(event) {
   dados.push(card);
   localStorage.setItem("Dados", JSON.stringify(dados));
 
+  sTotal();
   criarCard();
+  alert("Card cadastrado com sucesso!");
 }
 
 function criarCard() {
@@ -50,7 +52,7 @@ function criarCard() {
     <div class="cardBotoes">
     <button id="excluir" onclick="excluir(${element.id})"><img src="./source/img/icons/excluir.png" alt=""></button>
     <button id="editar" onclick="editar"><img src="./source/img/icons/editar.png" alt=""></button>
-    <a href="${element.video}" target="_blank"><button id="video"><img src="./source/img/icons/video.png" alt=""></button></a>
+    <a href="${element.video}" target="_blank"><button id="linkVideo"><img src="./source/img/icons/video.png" alt=""></button></a>
     </div>
     </li>
   </div>`;
@@ -59,12 +61,23 @@ function criarCard() {
 }
 
 function excluir(elementId) {
-  alert(`${elementId}`);
-  dados = dados.filter(({ id }) => {
-    return id != elementId;
-  });
-  localStorage.setItem("Dados", JSON.stringify(dados));
-  criarCard();
+  if (confirm(`Deseja deletar o card?`)) {
+    dados = dados.filter(({ id }) => {
+      return id != elementId;
+    });
+    localStorage.setItem("Dados", JSON.stringify(dados));
+    sTotal();
+    criarCard();
+    alert("Card deletado com sucesso!");
+  }
 }
 
 criarCard();
+
+function sTotal() {
+  let contadorCards = dados.length;
+  let contadorTotal = document.getElementById("stotal");
+  contadorTotal.innerText = contadorCards;
+}
+
+sTotal();

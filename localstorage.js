@@ -41,7 +41,7 @@ function criarCard() {
   dados.forEach((element) => {
     multCards += ` <div id="cardInfo">
     <li>
-    <h2>${element.titulo}</h2>
+    <h2 id="cardTitulo">${element.titulo}</h2>
     <div class="cardSkill">
       <p> <strong> Linguagem/Skill:</strong></p>
       <span>${element.linguagem}</span>
@@ -55,12 +55,13 @@ function criarCard() {
     </div>
     <div class="cardBotoes">
     <button id="excluir" onclick="excluir(${element.id})"><img src="./source/img/icons/excluir.png" alt=""></button>
-    <button id="editar" onclick="editar"><img src="./source/img/icons/editar.png" alt=""></button>
+    <button id="editar" onclick="editar(${element.id})"><img src="./source/img/icons/editar.png" alt=""></button>
     <a href="${element.video}" target="_blank"><button id="linkVideo"><img src="./source/img/icons/video.png" alt=""></button></a>
     </div>
     </li>
   </div>`;
   });
+
   listaCards.innerHTML = multCards;
 }
 
@@ -81,6 +82,15 @@ function excluir(elementId) {
 }
 
 criarCard();
+
+// function editar(elementId) {
+//   let edicao = document.getElementById("cards");
+//   let edit = edicao.firstElementChild;
+//   let redirecionar = document.;
+//   redirecionar.type = "text";
+//   redirecionar.value = edicao.textContent;
+//   edicao.insertBefore(redirecionar, edit);
+// }
 
 // Funções Estatíticas - Card Contador
 
@@ -139,3 +149,12 @@ function sSoft() {
   contadorTotal.innerText = contadorTotalSoft;
 }
 sSoft();
+
+const busca = document.getElementById("txtBusca");
+busca.addEventListener("input", (e) => {
+  const filtroBusca = e.target.value.toLowerCase();
+  const cardFiltrado = dados.filter((element) => {
+    return element.titulo.toLowerCase().includes(filtroBusca);
+  });
+  console.log(cardFiltrado);
+});

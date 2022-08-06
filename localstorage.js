@@ -25,6 +25,10 @@ function salvarCard(event) {
   localStorage.setItem("Dados", JSON.stringify(dados));
 
   sTotal();
+  sFront();
+  sBack();
+  sFull();
+  sSoft();
   criarCard();
   alert("Card cadastrado com sucesso!");
 }
@@ -66,13 +70,19 @@ function excluir(elementId) {
       return id != elementId;
     });
     localStorage.setItem("Dados", JSON.stringify(dados));
+    sFront();
     sTotal();
+    sBack();
+    sFull();
+    sSoft();
     criarCard();
     alert("Card deletado com sucesso!");
   }
 }
 
 criarCard();
+
+// Funções Estatíticas - Card Contador
 
 function sTotal() {
   let contadorCards = dados.length;
@@ -81,3 +91,51 @@ function sTotal() {
 }
 
 sTotal();
+
+function frontEnd(element) {
+  return element.categoria == "FrontEnd";
+}
+
+function sFront() {
+  let contadorFront = dados.filter(frontEnd);
+  let contadorTotalFront = contadorFront.length;
+  let contadorTotal = document.getElementById("sfront");
+  contadorTotal.innerText = contadorTotalFront;
+}
+sFront();
+
+function backEnd(element) {
+  return element.categoria == "BackEnd";
+}
+
+function sBack() {
+  let contadorBack = dados.filter(backEnd);
+  let contadorTotalBack = contadorBack.length;
+  let contadorTotal = document.getElementById("sback");
+  contadorTotal.innerText = contadorTotalBack;
+}
+sBack();
+
+function fullStack(element) {
+  return element.categoria == "FullStack";
+}
+
+function sFull() {
+  let contadorFull = dados.filter(fullStack);
+  let contadorTotalFull = contadorFull.length;
+  let contadorTotal = document.getElementById("sfull");
+  contadorTotal.innerText = contadorTotalFull;
+}
+sFull();
+
+function softSkill(element) {
+  return element.categoria == "SoftSkill";
+}
+
+function sSoft() {
+  let contadorSoft = dados.filter(softSkill);
+  let contadorTotalSoft = contadorSoft.length;
+  let contadorTotal = document.getElementById("ssoft");
+  contadorTotal.innerText = contadorTotalSoft;
+}
+sSoft();

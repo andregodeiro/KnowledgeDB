@@ -3,6 +3,8 @@ formulario.onsubmit = salvarCard;
 
 let dados = JSON.parse(localStorage.getItem("Dados")) || [];
 
+let edicaoId;
+
 function salvarCard(event) {
   event.preventDefault();
 
@@ -29,16 +31,16 @@ function salvarCard(event) {
   sBack();
   sFull();
   sSoft();
-  criarCard();
+  criarCard(dados);
   alert("Card cadastrado com sucesso!");
 }
 
-function criarCard() {
-  dados = JSON.parse(localStorage.getItem("Dados")) || [];
+function criarCard(data) {
+  // dados = JSON.parse(localStorage.getItem("Dados")) || [];
   const listaCards = document.getElementById("cards");
   let multCards = "";
 
-  dados.forEach((element) => {
+  data.forEach((element) => {
     multCards += ` <div id="cardInfo">
     <li>
     <h2 id="cardTitulo">${element.titulo}</h2>
@@ -76,21 +78,49 @@ function excluir(elementId) {
     sBack();
     sFull();
     sSoft();
-    criarCard();
+    criarCard(dados);
     alert("Card deletado com sucesso!");
   }
 }
 
-criarCard();
+criarCard(dados);
 
-// function editar(elementId) {
-//   let edicao = document.getElementById("cards");
-//   let edit = edicao.firstElementChild;
-//   let redirecionar = document.;
-//   redirecionar.type = "text";
-//   redirecionar.value = edicao.textContent;
-//   edicao.insertBefore(redirecionar, edit);
-// }
+function editar(elementId) {
+  if (confirm(`Deseja editar o card?`)) {
+    const [editarFiltro] = dados.filter(({ id }) => {
+      return id == elementId;
+    });
+    document.getElementById("titulo").value = editarFiltro.titulo;
+    document.getElementById("linguagem").value = editarFiltro.linguagem;
+    document.getElementById("categoria").value = editarFiltro.categoria;
+    document.getElementById("descricao").value = editarFiltro.descricao;
+    document.getElementById("video").value = editarFiltro.video;
+    edicaoId = elementId;
+    formulario.onsubmit = salvarEdicao;
+  }
+}
+
+function salvarEdicao() {
+  const novosDados = dados.map((dado) => {
+    if (dado.id == edicaoId) {
+      return {
+        titulo: document.getElementById("titulo").value,
+        linguagem: document.getElementById("linguagem").value,
+        categoria: document.getElementById("categoria").value,
+        descricao: document.getElementById("descricao").value,
+        video: document.getElementById("video").value,
+        id: edicaoId,
+      };
+    }
+    return dado;
+  });
+  dados = novosDados;
+  localStorage.setItem("Dados", JSON.stringify(novosDados));
+  formulario.onsubmit = salvarCard;
+  edicaoId = "";
+  alert("Card editado com sucesso!");
+  criarCard(dados);
+}
 
 // Funções Estatíticas - Card Contador
 
@@ -156,5 +186,5 @@ busca.addEventListener("input", (e) => {
   const cardFiltrado = dados.filter((element) => {
     return element.titulo.toLowerCase().includes(filtroBusca);
   });
-  console.log(cardFiltrado);
+  criarCard(cardFiltrado);
 });

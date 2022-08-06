@@ -75,11 +75,13 @@ form button {
 .limpar {
   background: #3e838c;
   color: white;
+  width: 70px;
 }
 
 .salvar {
   background: #3e838c;
   color: white;
+  width: 70px;
 }
 
 /* Corpo da Página (formulário, estatísticas e cards) */
@@ -155,6 +157,10 @@ li {
   text-align: justify;
 }
 
+.card p {
+  word-wrap: break-word;
+}
+
 .cardSkill,
 .cardCategoria {
   display: flex;
@@ -163,6 +169,7 @@ li {
 
 .cardDescricao {
   gap: 10px;
+  word-wrap: break-word;
 }
 
 .cardBotoes {

@@ -1,9 +1,13 @@
+// Global
+
 const formulario = document.getElementById("formulario");
 formulario.onsubmit = salvarCard;
 
 let dados = JSON.parse(localStorage.getItem("Dados")) || [];
 
 let edicaoId;
+
+// Funções para receber as informações do formulário e criar os cards.
 
 function salvarCard(event) {
   event.preventDefault();
@@ -67,6 +71,8 @@ function criarCard(data) {
   listaCards.innerHTML = multCards;
 }
 
+// Operacionalização dos botões de excluir e editar.
+
 function excluir(elementId) {
   if (confirm(`Deseja deletar o card?`)) {
     dados = dados.filter(({ id }) => {
@@ -83,7 +89,10 @@ function excluir(elementId) {
   }
 }
 
+// Renderiza automaticamente os cards que já estão armazenados.
 criarCard(dados);
+
+// Função para Edição - Enviar os dados de volta ao formulário e salvar a edição.
 
 function editar(elementId) {
   if (confirm(`Deseja editar o card?`)) {
@@ -121,6 +130,17 @@ function salvarEdicao() {
   alert("Card editado com sucesso!");
   criarCard(dados);
 }
+
+// Função qeu adiciona funcionalidade para a barra de busca
+
+const busca = document.getElementById("txtBusca");
+busca.addEventListener("input", (e) => {
+  const filtroBusca = e.target.value.toLowerCase();
+  const cardFiltrado = dados.filter((element) => {
+    return element.titulo.toLowerCase().includes(filtroBusca);
+  });
+  criarCard(cardFiltrado);
+});
 
 // Funções Estatíticas - Card Contador
 
@@ -179,12 +199,3 @@ function sSoft() {
   contadorTotal.innerText = contadorTotalSoft;
 }
 sSoft();
-
-const busca = document.getElementById("txtBusca");
-busca.addEventListener("input", (e) => {
-  const filtroBusca = e.target.value.toLowerCase();
-  const cardFiltrado = dados.filter((element) => {
-    return element.titulo.toLowerCase().includes(filtroBusca);
-  });
-  criarCard(cardFiltrado);
-});
